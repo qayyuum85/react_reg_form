@@ -13,7 +13,7 @@ class Search extends Component {
   }
 }
 
-Search.PropTypes = {
+Search.propTypes = {
   username: PropTypes.string
 };
 

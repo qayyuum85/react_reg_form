@@ -1,0 +1,31 @@
+[{
+        "label": "Nama Penuh",
+        "placeholder": "Nama",
+        "id": "name"
+    },
+    {
+        "label": "No K/P",
+        "placeholder": "",
+        "id": "icNo"
+    },
+    {
+        "label": "Alamat",
+        "placeholder": "Alamat",
+        "id": "address"
+    },
+    {
+        "label": "Telefon",
+        "placeholder": "Telefon",
+        "id": "phone"
+    },
+    {
+        "label": "Nama Sekolah",
+        "placeholder": "Nama Sekolah",
+        "id": "schoolName"
+    },
+    {
+        "label": "Tahun/Tingkatan",
+        "placeholder": "Tahun/Tingkatan",
+        "id": "level"
+    }
+]
