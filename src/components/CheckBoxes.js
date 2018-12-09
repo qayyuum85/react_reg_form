@@ -26,7 +26,7 @@ class CheckBoxes extends Component {
                 key={i}
                 onClick={selected}
               />
-              <label htmlFor={"class" + x.value}>{x.name}</label>
+              <label htmlFor={`class${x.value}`}>{x.name}</label>
             </div>
           );
         })}
