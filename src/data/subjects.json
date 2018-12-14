@@ -1,0 +1,37 @@
+{
+    "primary": [
+        "Bahasa Melayu",
+        "Bahasa Inggeris",
+        "Matematik",
+        "Sains",
+        "Sejarah",
+        "Teknologi Maklumat dan Komunikasi",
+        "Rekabentuk dan Teknologi"
+    ],
+    "secondary-lower": [
+        "Bahasa Melayu",
+        "Bahasa Inggeris",
+        "Matematik",
+        "Sains",
+        "Sejarah",
+        "Geografi",
+        "Asas Sains Komputer",
+        "Rekabentuk dan Teknologi"
+    ],
+    "secondary-upper": [
+        "Bahasa Melayu",
+        "Bahasa Inggeris",
+        "Matematik",
+        "Sains",
+        "Sejarah",
+        "Sains Tambahan",
+        "Sains Komputer",
+        "Matematik Tambahan",
+        "Prinsip Akaun",
+        "Perniagaan",
+        "Ekonomi",
+        "Fizik",
+        "Kimia",
+        "Biologi"
+    ]
+}

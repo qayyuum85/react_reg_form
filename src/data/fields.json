@@ -1,31 +1,37 @@
 [{
         "label": "Nama Penuh",
         "placeholder": "Nama",
-        "id": "name"
+        "id": "name",
+        "type": "text"
     },
     {
         "label": "No K/P",
         "placeholder": "",
-        "id": "icNo"
+        "id": "icNo",
+        "type": "text"
     },
     {
         "label": "Alamat",
         "placeholder": "Alamat",
-        "id": "address"
+        "id": "address",
+        "type": "text"
     },
     {
         "label": "Telefon",
         "placeholder": "Telefon",
-        "id": "phone"
+        "id": "phone",
+        "type": "text"
     },
     {
         "label": "Nama Sekolah",
         "placeholder": "Nama Sekolah",
-        "id": "schoolName"
+        "id": "schoolName",
+        "type": "text"
     },
     {
         "label": "Tahun/Tingkatan",
         "placeholder": "Tahun/Tingkatan",
-        "id": "level"
+        "id": "level",
+        "type": "text"
     }
 ]

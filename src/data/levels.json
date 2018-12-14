@@ -1,0 +1,49 @@
+{
+    "primary": [{
+            "val": "d1",
+            "text": "Darjah 1"
+        },
+        {
+            "val": "d2",
+            "text": "Darjah 2"
+        },
+        {
+            "val": "d3",
+            "text": "Darjah 3"
+        },
+        {
+            "val": "d4",
+            "text": "Darjah 4"
+        },
+        {
+            "val": "d5",
+            "text": "Darjah 5"
+        },
+        {
+            "val": "d6",
+            "text": "Darjah 6"
+        }
+
+    ],
+    "secondary": [{
+            "val": "t1",
+            "text": "Tingkatan 1"
+        },
+        {
+            "val": "t2",
+            "text": "Tingkatan 2"
+        },
+        {
+            "val": "t3",
+            "text": "Tingkatan 3"
+        },
+        {
+            "val": "t4",
+            "text": "Tingkatan 4"
+        },
+        {
+            "val": "t5",
+            "text": "Tingkatan 5"
+        }
+    ]
+}
