@@ -5,7 +5,8 @@ class Dropdown extends Component {
     super(props);
     this.state = {
       selections: props.selections,
-      selectedVal: ""
+      selectedVal: "",
+      onChange: props.onChange
     };
   }
 
@@ -14,6 +15,7 @@ class Dropdown extends Component {
     this.setState(state => ({
       selectedVal: val
     }));
+    this.state.onChange(val);
   };
 
   render() {
@@ -21,9 +23,17 @@ class Dropdown extends Component {
       <div>
         <select id="ddComponent1" onChange={this.logger}>
           {this.state.selections.map((opt, optIdx) => {
+            let val, text;
+            if (typeof opt === "object") {
+              val = opt.val;
+              text = opt.text;
+            } else {
+              val = opt;
+              text = opt;
+            }
             return (
-              <option value={opt.val} key={optIdx}>
-                {opt.text}
+              <option value={val} key={optIdx}>
+                {text}
               </option>
             );
           })}

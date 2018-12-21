@@ -2,10 +2,12 @@ import React from "react";
 import Search from "../components/Search.js";
 import Dropdown from "../components/Dropdown.js";
 import TextInput from "../components/TextInput.js";
+import Subjects from "../components/Subjects.js"
 import Radios from "../components/Radios.js";
 import Fields from "../data/fields.json";
 import Levels from "../data/levels.json";
-import Subjects from "../data/subjects.json";
+import subjects from "../data/subjects.json"
+
 import "./inputCont.css";
 
 const InputCont = props => {
@@ -17,7 +19,8 @@ const InputCont = props => {
       {Fields.map((x, i) => {
         return <TextInput props={x} key={i} />;
       })}
-      <Radios options={Subjects.primary}></Radios>
+      <Radios options={subjects.primary}></Radios>
+      <Subjects subjects={subjects} levels={Levels}></Subjects>
     </div>
   );
 };

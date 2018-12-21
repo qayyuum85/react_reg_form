@@ -5,7 +5,8 @@ class Radios extends Component {
     super(props);
     this.state = {
       options: props.options,
-      selectedVal: ""
+      selectedVal: "",
+      onSelect: props.onSelect
     };
     this.setSelected = this.setSelected.bind(this);
   }
@@ -15,12 +16,15 @@ class Radios extends Component {
     this.setState(state => ({
       selectedVal: selectedVal
     }));
+    if (this.state.onSelect && typeof this.state.onSelect === "function") {
+      this.state.onSelect(selectedVal);
+    }
   }
 
   render() {
     return (
       <div>
-        {this.state.options.map((opt) => {
+        {this.state.options.map(opt => {
           return (
             <div key={opt}>
               <input
@@ -29,8 +33,7 @@ class Radios extends Component {
                 value={opt}
                 onClick={this.setSelected}
                 name="radioSubject"
-              >
-              </input>
+              />
               <span>{opt}</span>
             </div>
           );
