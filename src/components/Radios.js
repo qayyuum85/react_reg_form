@@ -21,6 +21,10 @@ class Radios extends Component {
     }
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ options: props.options });
+  }
+
   render() {
     return (
       <div>
