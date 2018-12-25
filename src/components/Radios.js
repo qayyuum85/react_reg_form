@@ -32,13 +32,14 @@ class Radios extends Component {
           return (
             <div key={opt}>
               <input
+                id={`rad_${opt}`}
                 type="radio"
                 key={opt}
                 value={opt}
                 onClick={this.setSelected}
                 name="radioSubject"
               />
-              <span>{opt}</span>
+              <label htmlFor={`rad_${opt}`}>{opt}</label>
             </div>
           );
         })}

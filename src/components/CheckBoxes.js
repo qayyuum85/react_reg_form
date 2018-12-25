@@ -5,29 +5,39 @@ class CheckBoxes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false
+      selected: [],
+      options: props.subjects
     };
   }
 
+  updateState = e => {
+    let currSelection = this.state.selected;
+    const selected = e.target.value;
+    const checked = e.target.checked;
+    const isIncluded = currSelection.includes(selected);
+
+    if (checked && !isIncluded) {
+      currSelection.push(selected);
+    }
+
+    if (!checked && isIncluded) {
+      let index = currSelection.findIndex(s => s === selected);
+      currSelection.splice(index, 1);
+    }
+
+    this.setState({ selected: currSelection });
+  };
+
   render() {
-    const selected = (prop) => {
-      console.log(prop);
-    };
     return (
-      <div className="sampleDiv">
-        {this.props.items.map((x, i) => {
+      <div>
+        {this.state.options.map(item => {
           return (
-            <div>
-              <input
-                type="radio"
-                id={"class" + x.value}
-                value={x.name}
-                name="classLevel"
-                key={i}
-                onClick={selected}
-              />
-              <label htmlFor={`class${x.value}`}>{x.name}</label>
-            </div>
+            <label className="containerChkBox" key={item}>
+              {item}
+              <input type="checkbox" value={item} onClick={this.updateState} />
+              <span className="checkmark" />
+            </label>
           );
         })}
       </div>

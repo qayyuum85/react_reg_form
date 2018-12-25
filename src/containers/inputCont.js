@@ -3,7 +3,7 @@ import Search from "../components/Search.js";
 import Dropdown from "../components/Dropdown.js";
 import TextInput from "../components/TextInput.js";
 import Subjects from "../components/Subjects.js";
-import Radios from "../components/Radios.js";
+import CheckBoxes from "../components/CheckBoxes.js";
 import Fields from "../data/fields.json";
 import Levels from "../data/levels.json";
 import subjects from "../data/subjects.json";
@@ -19,8 +19,8 @@ const InputCont = props => {
       {Fields.map((x, i) => {
         return <TextInput props={x} key={i} />;
       })}
-      <Radios options={subjects.primary}></Radios>
-      <Subjects subjects={subjects} levels={Levels}></Subjects>
+      <Subjects subjects={subjects} levels={Levels} />
+      <CheckBoxes subjects={subjects.primary} />
     </div>
   );
 };

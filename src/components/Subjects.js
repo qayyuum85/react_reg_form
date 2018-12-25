@@ -69,8 +69,16 @@ class Subjects extends Component {
           onChange={this.typeChange}
           selected={this.state.selectedType}
         />
-        <Dropdown selections={levels} onChange={this.levelChange} selected={this.state.selectedLevel}/>
-        <Radios options={subject} onSelect={this.optionSelect} selected={this.state.selectedSubject}/>
+        <Dropdown
+          selections={levels}
+          onChange={this.levelChange}
+          selected={this.state.selectedLevel}
+        />
+        <Radios
+          options={subject}
+          onSelect={this.optionSelect}
+          selected={this.state.selectedSubject}
+        />
       </div>
     );
   }
