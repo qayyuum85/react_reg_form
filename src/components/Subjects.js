@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Dropdown from "./Dropdown.js";
-import Radios from "./Radios.js";
+import CheckBoxes from "./CheckBoxes.js";
 
 class Subjects extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Subjects extends Component {
     this.state = {
       selectedType: "primary",
       selectedLevel: "d1",
-      selectedSubject: "Bahasa Melayu",
+      selectedSubject: [],
       levels: props.levels,
       subjects: props.subjects
     };
@@ -20,7 +20,8 @@ class Subjects extends Component {
       const level = selected === "primary" ? "d1" : "t1";
       return {
         selectedType: selected,
-        selectedLevel: level
+        selectedLevel: level,
+        selectedSubject: []
       };
     });
   };
@@ -28,12 +29,13 @@ class Subjects extends Component {
   levelChange = v => {
     const selected = v;
     this.setState(state => ({
-      selectedLevel: selected
+      selectedLevel: selected,
+      selectedSubject: []
     }));
   };
 
-  optionSelect = v => {
-    this.setState(state => ({ selectedSubject: v }));
+  cbxSelect = selectedSubjects => {
+    this.setState(state => ({ selectedSubject: selectedSubjects }));
   };
 
   render() {
@@ -74,9 +76,9 @@ class Subjects extends Component {
           onChange={this.levelChange}
           selected={this.state.selectedLevel}
         />
-        <Radios
-          options={subject}
-          onSelect={this.optionSelect}
+        <CheckBoxes
+          subjects={subject}
+          onClick={this.cbxSelect}
           selected={this.state.selectedSubject}
         />
       </div>

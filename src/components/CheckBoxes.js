@@ -5,8 +5,9 @@ class CheckBoxes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: [],
-      options: props.subjects
+      selected: props.selected,
+      options: props.subjects,
+      onClick: props.onClick
     };
   }
 
@@ -26,16 +27,30 @@ class CheckBoxes extends Component {
     }
 
     this.setState({ selected: currSelection });
+    this.state.onClick(currSelection);
   };
+
+  componentWillReceiveProps(props) {
+    this.setState({
+      options: props.subjects,
+      selected: props.selected
+    });
+  }
 
   render() {
     return (
       <div>
         {this.state.options.map(item => {
+          const checked = this.state.selected.includes(item);
           return (
             <label className="containerChkBox" key={item}>
               {item}
-              <input type="checkbox" value={item} onClick={this.updateState} />
+              <input
+                type="checkbox"
+                value={item}
+                onClick={this.updateState}
+                checked={checked}
+              />
               <span className="checkmark" />
             </label>
           );
