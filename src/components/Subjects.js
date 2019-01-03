@@ -10,7 +10,8 @@ class Subjects extends Component {
       selectedLevel: "d1",
       selectedSubject: [],
       levels: props.levels,
-      subjects: props.subjects
+      subjects: props.subjects,
+      valueUpdate: props.valueUpdate
     };
   }
 
@@ -24,6 +25,10 @@ class Subjects extends Component {
         selectedSubject: []
       };
     });
+
+    this.state.valueUpdate("type", this.state.selectedType);
+    this.state.valueUpdate("level", this.state.selectedLevel);
+    this.state.valueUpdate("subject", this.state.selectedSubject);
   };
 
   levelChange = v => {
@@ -32,10 +37,13 @@ class Subjects extends Component {
       selectedLevel: selected,
       selectedSubject: []
     }));
+    this.state.valueUpdate("level", this.state.selectedLevel);
+    this.state.valueUpdate("subject", this.state.selectedSubject);
   };
 
   cbxSelect = selectedSubjects => {
     this.setState(state => ({ selectedSubject: selectedSubjects }));
+    this.state.valueUpdate("subject", this.state.selectedSubject);
   };
 
   render() {

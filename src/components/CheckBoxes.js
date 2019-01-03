@@ -48,7 +48,7 @@ class CheckBoxes extends Component {
               <input
                 type="checkbox"
                 value={item}
-                onClick={this.updateState}
+                onChange={this.updateState}
                 checked={checked}
               />
               <span className="checkmark" />

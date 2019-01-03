@@ -5,24 +5,33 @@ import "./TextInput.css";
 class TextInput extends Component {
   constructor(props) {
     super(props);
-    this.state = { currText: "" };
+    console.log(props);
+    this.state = {
+      currText: "",
+      valueUpdate: props.valueUpdate
+    };
     this.updateLabel = this.updateLabel.bind(this);
   }
 
   updateLabel(e) {
-    console.log(e.target.value);
-    this.setState({currText: e.target.value});
+    this.state.valueUpdate(e.target.name, e.target.value);
+    this.setState({ currText: e.target.value });
   }
 
   render() {
     return (
-      <div className="txtInput">
-        <div><label htmlFor={"txt" + this.props.props.id}>{this.props.props.label}</label></div>
+      <div className="col-md-6 txtInput">
+        <div>
+          <label htmlFor={"txt" + this.props.props.id}>
+            {this.props.props.label}
+          </label>
+        </div>
         <input
           type="text"
           placeholder={this.props.props.placeholder}
           id={"txt" + this.props.props.id}
           onKeyUp={this.updateLabel}
+          name={this.props.props.id}
         />
         <Display text={this.state.currText} />
       </div>

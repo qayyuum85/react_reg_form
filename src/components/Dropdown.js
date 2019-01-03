@@ -25,9 +25,13 @@ class Dropdown extends Component {
   render() {
     return (
       <div>
-        <select id="ddComponent1" onChange={this.logger}>
+        <select
+          id="ddComponent1"
+          onChange={this.logger}
+          value={this.state.selectedVal}
+        >
           {this.state.selections.map((opt, optIdx) => {
-            let val, text, selectedOpt;
+            let val, text;
             if (typeof opt === "object") {
               val = opt.val;
               text = opt.text;
@@ -36,10 +40,8 @@ class Dropdown extends Component {
               text = opt;
             }
 
-            selectedOpt = val === this.state.selectedVal ? true : false;
-
             return (
-              <option value={val} key={optIdx} selected={selectedOpt}>
+              <option value={val} key={optIdx}>
                 {text}
               </option>
             );
