@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Display from "./Display.js";
+// import Display from "./Display.js";
 import "./TextInput.css";
 
 class TextInput extends Component {
@@ -20,20 +20,20 @@ class TextInput extends Component {
 
   render() {
     return (
-      <div className="col-md-6 txtInput">
-        <div>
+      <div className="txtInput" style={{ width: "100%" }}>
+        <div className="form-group">
           <label htmlFor={"txt" + this.props.props.id}>
             {this.props.props.label}
           </label>
+          <input
+            type="text"
+            placeholder={this.props.props.placeholder}
+            id={"txt" + this.props.props.id}
+            onKeyUp={this.updateLabel}
+            name={this.props.props.id}
+            className="form-control"
+          />
         </div>
-        <input
-          type="text"
-          placeholder={this.props.props.placeholder}
-          id={"txt" + this.props.props.id}
-          onKeyUp={this.updateLabel}
-          name={this.props.props.id}
-        />
-        <Display text={this.state.currText} />
       </div>
     );
   }

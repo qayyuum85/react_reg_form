@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Dropdown from "./Dropdown.js";
+import FormDropdown from "./Dropdown.js";
 import CheckBoxes from "./CheckBoxes.js";
 
 class Subjects extends Component {
@@ -42,7 +42,7 @@ class Subjects extends Component {
   };
 
   cbxSelect = selectedSubjects => {
-    this.setState(state => ({ selectedSubject: selectedSubjects }));
+    this.setState(() => ({ selectedSubject: selectedSubjects }));
     this.state.valueUpdate("subject", this.state.selectedSubject);
   };
 
@@ -74,12 +74,12 @@ class Subjects extends Component {
 
     return (
       <div>
-        <Dropdown
+        <FormDropdown
           selections={Object.keys(this.state.levels)}
           onChange={this.typeChange}
           selected={this.state.selectedType}
         />
-        <Dropdown
+        <FormDropdown
           selections={levels}
           onChange={this.levelChange}
           selected={this.state.selectedLevel}

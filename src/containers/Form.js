@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Alert } from "reactstrap";
 import TextInput from "../components/TextInput.js";
 import Subjects from "../components/Subjects.js";
 // import "./Form.css";
@@ -33,7 +34,8 @@ class Form extends Component {
   render() {
     return (
       <div className="container">
-        <div class="row">
+        <Alert color="primary">This is primary alert! Check it out</Alert>
+        <div>
           {Fields.map((x, i) => {
             return (
               <TextInput props={x} key={i} valueUpdate={this.updateFields} />
@@ -46,7 +48,12 @@ class Form extends Component {
           levels={Levels}
           valueUpdate={this.updateFields}
         />
-        <input type="submit" value="Submit" onClick={this.submitForm} />
+        <input
+          type="submit"
+          value="Submit"
+          onClick={this.submitForm}
+          className="btn btn-primary"
+        />
       </div>
     );
   }
